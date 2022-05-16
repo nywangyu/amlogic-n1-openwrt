@@ -18,7 +18,7 @@ on:
       openwrt_kernel:
         description: "Choose kernel version."
         required: false
-        default: "5.4.193"
+        default: "5.4.194"
       openwrt_size:
         description: "Set the rootfs size."
         required: false
@@ -124,9 +124,9 @@ jobs:
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}
           body: |
-            This is OpenWrt firmware for Amlogic s9xxx tv box
+            This is OpenWrt firmware for N1
             * Firmware information
-            Default IP: 192.168.2.1
+            Default IP: 192.168.0.3
             Default username: root
             Default password: password
             Default WIFI name: OpenWrt
