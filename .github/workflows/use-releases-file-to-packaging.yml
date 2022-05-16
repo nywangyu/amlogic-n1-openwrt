@@ -17,7 +17,7 @@ on:
       openwrt_soc:
         description: "Choose Amlogic SoC."
         required: false
-        default: "all"
+        default: "s905d"
       openwrt_kernel:
         description: "Choose kernel version."
         required: false
