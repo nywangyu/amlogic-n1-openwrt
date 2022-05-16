@@ -21,7 +21,7 @@ on:
       openwrt_kernel:
         description: "Choose kernel version."
         required: false
-        default: "5.15.25_5.10.100"
+        default: "5.15.35"
       openwrt_size:
         description: "Set the rootfs size."
         required: false
@@ -71,12 +71,13 @@ jobs:
 
       - name: Build OpenWrt firmware
         if: steps.down.outputs.status == 'success' && !cancelled()
-        uses: ophub/amlogic-s9xxx-openwrt@main
-        with:
-          openwrt_path: openwrt/bin/targets/*/*/*rootfs.tar.gz
-          openwrt_soc: ${{ github.event.inputs.openwrt_soc }}
-          openwrt_kernel: ${{ github.event.inputs.openwrt_kernel }}
-          openwrt_size: ${{ github.event.inputs.openwrt_size }}
+        uses: ophub/flippy-openwrt-actions@main
+        env:
+          OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.tar.gz
+          PACKAGE_SOC: s905d
+          KERNEL_VERSION_NAME: 5.15.35
+          KERNEL_AUTO_LATEST: true
+          WHOAMI: nywangyu
 
       - name: Upload OpenWrt Firmware to Release
         uses: ncipollo/release-action@main
@@ -87,9 +88,9 @@ jobs:
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}
           body: |
-            This is OpenWrt firmware for Amlogic s9xxx tv box
+            This is OpenWrt firmware for N1
             * Firmware information
-            Default IP: 192.168.1.1
+            Default IP: 192.168.0.3
             Default username: root
             Default password: password
             Default WIFI name: OpenWrt
