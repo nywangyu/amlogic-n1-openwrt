@@ -43,7 +43,7 @@ rm -rf lede/package/lean/luci-theme-argon
 # git clone -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
 # git clone https://github.com/1wrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 # git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
-git clone https://github.com/msylgj/luci-app-tencentddns.git package/luci-app-tencentddns
+# git clone https://github.com/msylgj/luci-app-tencentddns.git package/luci-app-tencentddns
 
 # Fix runc version error
 # rm -rf ./feeds/packages/utils/runc/Makefile
