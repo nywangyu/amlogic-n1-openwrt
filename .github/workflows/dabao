@@ -17,11 +17,11 @@ on:
       openwrt_soc:
         description: "Choose Amlogic SoC."
         required: false
-        default: "all"
+        default: "s905d"
       openwrt_kernel:
         description: "Choose kernel version."
         required: false
-        default: "5.15.25_5.10.100"
+        default: "5.4.194"
       openwrt_size:
         description: "Set the rootfs size."
         required: false
